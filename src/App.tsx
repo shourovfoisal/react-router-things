@@ -2,12 +2,20 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { Link, Outlet } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <div style={{ display: "flex", gap: "1rem", justifyContent: "center" }}>
+        <Link to={`/`}>Home</Link>
+        <Link to={`/about`}>About</Link>
+      </div>
+      <div style={{ padding: "6rem 0" }}>
+        <Outlet />
+      </div>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
